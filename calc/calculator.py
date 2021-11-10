@@ -52,28 +52,20 @@ class Calculator:
 
     @staticmethod
     def add_number(*args):
-        """adds value_a and value_b"""
-        addition = Addition.create(*args)
-        Calculator.add_calculation_to_history(addition)
-        return addition.get_result()
+        """adds all passed in values"""
+        Calculator.add_calculation_to_history(Addition.create(*args))
 
     @staticmethod
     def subtract_number(*args):
-        """subtract value_b from value_a"""
-        subtraction = Subtraction.create(*args)
-        Calculator.add_calculation_to_history(subtraction)
-        return subtraction.get_result()
+        """subtracts from first value all subsequent values"""
+        Calculator.add_calculation_to_history(Subtraction.create(*args))
 
     @staticmethod
     def multiply_number(*args):
-        """multiply value_a and value_b"""
-        multiplication = Multiplication.create(*args)
-        Calculator.add_calculation_to_history(multiplication)
-        return multiplication.get_result()
+        """multiplies all passed values"""
+        Calculator.add_calculation_to_history(Multiplication.create(*args))
 
     @staticmethod
     def divide_number(*args):
-        """divide value_a by value_b"""
-        division = Division.create(*args)
-        Calculator.add_calculation_to_history(division)
-        return division.get_result()
+        """divides first passed value by all subsequent values"""
+        Calculator.add_calculation_to_history(Division.create(*args))
