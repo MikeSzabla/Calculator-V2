@@ -45,7 +45,7 @@ def test_get_first_operation():
     Calculator.clear_history()
     Calculator.subtract_number(4, 2)
     first_operation = Calculator.get_first_operation()
-    assert isinstance(first_operation, Addition)
+    assert isinstance(first_operation, Subtraction)
     assert first_operation.get_result() == 2
 
 
