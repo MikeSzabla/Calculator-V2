@@ -6,7 +6,6 @@ class Calculation:  # pylint: disable=too-few-public-methods
     def __init__(self, *args):
         """default constructor setting up value variables"""
         self.values = args
-        pass
 
     @classmethod
     def create(cls, *args):
