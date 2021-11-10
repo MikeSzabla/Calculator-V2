@@ -2,17 +2,17 @@
 from calc.operations.division import Division
 
 
-def test_multiplication():
+def test_division():
     """method calling Division operation"""
     # Arrange
-    division = Division(6, 2)
+    division = Division.create(8, 2, 2)
     # Act
     result = division.get_result()
     # Assert
-    assert result == 3
+    assert result == 2
 
     # Arrange
-    division = Division(1, 0)
+    division = Division.create(8, 2, 0)
     # Act
     result = division.get_result()
     # Assert

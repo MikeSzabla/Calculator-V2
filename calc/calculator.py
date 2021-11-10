@@ -48,32 +48,32 @@ class Calculator:
     @staticmethod
     def remove_from_history(index):
         """remove an item from the calculator's history via index"""
-        Calculator.history.pop(index)
+        return Calculator.history.pop(index)
 
     @staticmethod
-    def add_number(value_a, value_b):
+    def add_number(*args):
         """adds value_a and value_b"""
-        addition = Addition.create(value_a, value_b)
+        addition = Addition.create(*args)
         Calculator.add_calculation_to_history(addition)
         return addition.get_result()
 
     @staticmethod
-    def subtract_number(value_a, value_b):
+    def subtract_number(*args):
         """subtract value_b from value_a"""
-        subtraction = Subtraction.create(value_a, value_b)
+        subtraction = Subtraction.create(*args)
         Calculator.add_calculation_to_history(subtraction)
         return subtraction.get_result()
 
     @staticmethod
-    def multiply_number(value_a, value_b):
+    def multiply_number(*args):
         """multiply value_a and value_b"""
-        multiplication = Multiplication.create(value_a, value_b)
+        multiplication = Multiplication.create(*args)
         Calculator.add_calculation_to_history(multiplication)
         return multiplication.get_result()
 
     @staticmethod
-    def divide_number(value_a, value_b):
+    def divide_number(*args):
         """divide value_a by value_b"""
-        division = Division.create(value_a, value_b)
+        division = Division.create(*args)
         Calculator.add_calculation_to_history(division)
         return division.get_result()
