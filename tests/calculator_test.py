@@ -35,20 +35,18 @@ def test_get_last_operation():
 
 def test_get_first_calc_result():
     """tests the get_result_of_first_calculation method"""
-    new_calc = Calculator()
-    new_calc.add_number(2, 2)
-    new_calc.subtract_number(6, 3)
-    assert new_calc.get_result_of_first_calculation() == 4
+    Calculator.clear_history()
+    Calculator.subtract_number(6, 3)
+    assert Calculator.get_result_of_first_calculation() == 3
 
 
 def test_get_first_operation():
     """tests the get_first_operation method in Calculator"""
-    new_calc = Calculator()
-    new_calc.add_number(2, 2)
-    new_calc.subtract_number(6, 3)
-    first_operation = new_calc.get_first_operation()
+    Calculator.clear_history()
+    Calculator.subtract_number(4, 2)
+    first_operation = Calculator.get_first_operation()
     assert isinstance(first_operation, Addition)
-    assert first_operation.get_result() == 4
+    assert first_operation.get_result() == 2
 
 
 def test_clear_history():
